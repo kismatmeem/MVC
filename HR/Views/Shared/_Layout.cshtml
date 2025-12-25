@@ -16,16 +16,19 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                @if (Session["username"] != null)
+                {
+                    <ul class="navbar-nav flex-grow-1">
+                        <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
 
-                    <li>@Html.ActionLink("Employee Information", "NewEmployee", "Employee", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Department", "NewDepartment", "Department", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Company", "NewCompany", "Company", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Designation", "NewDesignation", "Designation", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("EmployeeAttendance", "NewEmployeeAttendance", "EmployeeAttendance", new { area = "" }, new { @class = "nav-link" })</li>
-                </ul>
+                        <li>@Html.ActionLink("Employee Information", "NewEmployee", "Employee", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Department", "NewDepartment", "Department", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Company", "NewCompany", "Company", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Designation", "NewDesignation", "Designation", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("EmployeeAttendance", "NewEmployeeAttendance", "EmployeeAttendance", new { area = "" }, new { @class = "nav-link" })</li>
+                    </ul>
+                }
             </div>
         </div>
     </nav>

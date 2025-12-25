@@ -12,13 +12,23 @@ namespace HR.Controllers
 {
     public class EmployeeController : Controller
     {
-        // GET: Employee
+        //// GET: Employee
+        //public ActionResult Index()
+        //{
+        //    return View();
+        //}
         public ActionResult Index()
         {
+            // Session check
+            if (Session["username"] == null)
+            {
+                return RedirectToAction("Index", "Login");
+            }
+
             return View();
         }
 
-         public ActionResult NewEmployee()
+        public ActionResult NewEmployee()
         {
             return View();
         }

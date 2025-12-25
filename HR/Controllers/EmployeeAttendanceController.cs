@@ -9,9 +9,19 @@ namespace HR.Controllers
 {
     public class EmployeeAttendanceController : Controller
     {
-        // GET: EmployeeAttendance
+        //// GET: EmployeeAttendance
+        //public ActionResult Index()
+        //{
+        //    return View();
+        //}
         public ActionResult Index()
         {
+            // Session check
+            if (Session["username"] == null)
+            {
+                return RedirectToAction("Index", "Login");
+            }
+
             return View();
         }
 
